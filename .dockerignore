@@ -1,4 +1,6 @@
+.git
 node_modules
 .next
-.git
 npm-debug.log
+Dockerfile
+README.md

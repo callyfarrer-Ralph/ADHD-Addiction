@@ -1,14 +1,26 @@
-FROM node:18-alpine
+FROM node:20-alpine AS deps
 
 WORKDIR /app
-
-COPY package*.json ./
+COPY ADHD-Addiction/package*.json ./
+COPY shared-ui- /shared-ui-
 RUN npm install
 
-COPY . .
+FROM node:20-alpine AS builder
 
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY ADHD-Addiction/ ./
+COPY shared-ui- /shared-ui-
 RUN npm run build
 
-EXPOSE 3000
+FROM node:20-alpine AS runner
 
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+
+EXPOSE 3000
 CMD ["npm", "run", "start"]

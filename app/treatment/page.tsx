@@ -1,27 +1,31 @@
+import { CardGrid, CTA, PageHeader, Section } from "@farrer/shared-ui";
+
 export const metadata = {
-  title: 'Treatment | Online ADHD and Therapy Support',
-  description: 'Structured online therapy using CBT, trauma-informed practice and neuro-affirming approaches.'
-}
+  title: "Treatment Approach | ADHD & Addiction Therapy"
+};
 
 export default function TreatmentPage() {
-  const items = [
-    'NICE-aligned Cognitive Behavioural Therapy',
-    'Trauma-informed practice',
-    'ADHD-specific behavioural strategies',
-    'Relapse prevention tailored to neurodivergent brains',
-    'Strengths-based, non-pathologising care',
-    'Brief psychodynamic counselling where appropriate'
-  ]
-
   return (
-    <main className="bg-white text-[#1C2A3A]">
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <h1 className="text-5xl font-bold">Treatment</h1>
-        <p className="mt-6 max-w-3xl text-lg text-slate-700">Therapy is collaborative, structured and paced to your nervous system. We focus on practical change while making space for the emotional and relational patterns that sit underneath symptoms.</p>
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {items.map((item) => <div key={item} className="rounded-2xl bg-[#F4EFEA] p-5 shadow-sm">{item}</div>)}
-        </div>
-      </section>
+    <main>
+      <PageHeader
+        theme="adhd"
+        eyebrow="Treatment"
+        title="Structured therapy tailored to ADHD and addiction"
+        text="Treatment is collaborative, paced and focused on understanding the function of behaviour while building skills for safer, more meaningful choices."
+      />
+      <Section title="What treatment may include">
+        <CardGrid
+          items={[
+            { title: "Assessment and formulation", text: "Mapping triggers, maintaining cycles, ADHD traits, risk, strengths and goals." },
+            { title: "CBT and behavioural change", text: "Practical experiments, coping plans, relapse prevention and emotional regulation skills." },
+            { title: "Compassion-focused work", text: "Reducing shame, self-attack and hopelessness so change becomes more sustainable." },
+            { title: "Values and identity", text: "Rebuilding life around what matters, not just what you are trying to avoid." },
+            { title: "Risk planning", text: "Clear plans for cravings, lapses, escalation, crisis signs and support routes." },
+            { title: "Review", text: "Regular check-ins on progress, fit and next steps." }
+          ]}
+        />
+      </Section>
+      <CTA theme="adhd" title="Discuss treatment options" href="/contact" label="Book a consultation" />
     </main>
-  )
+  );
 }

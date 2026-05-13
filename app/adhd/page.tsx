@@ -1,20 +1,40 @@
+import { CardGrid, CTA, PageHeader, Section, TextBlock } from "@farrer/shared-ui";
+
 export const metadata = {
-  title: 'ADHD Therapy | Online ADHD-Informed CBT',
-  description: 'Online ADHD-informed CBT for impulsivity, emotional regulation, executive functioning, rejection sensitivity and self-esteem.'
-}
+  title: "ADHD Therapy | ADHD & Addiction Therapy"
+};
 
 export default function ADHDPage() {
   return (
-    <main className="bg-[#F4EFEA] text-[#1C2A3A]">
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <h1 className="text-5xl font-bold">ADHD-Informed CBT</h1>
-        <p className="mt-6 max-w-3xl text-lg text-slate-700">ADHD-informed CBT is structured, practical therapy tailored to neurodivergent minds. We focus on emotional regulation, impulsivity, executive functioning, identity, shame and rejection sensitivity.</p>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {['Emotional dysregulation', 'Impulsivity and overwhelm', 'Executive functioning', 'Low self-esteem and identity', 'Rejection sensitivity', 'Practical tools that fit your brain'].map((item) => (
-            <div key={item} className="rounded-2xl bg-white p-5 shadow-sm">{item}</div>
-          ))}
-        </div>
-      </section>
+    <main>
+      <PageHeader
+        theme="adhd"
+        eyebrow="Neuro-affirming ADHD therapy"
+        title="Therapy that understands adult ADHD"
+        text="Support for emotional regulation, executive functioning, impulsivity, shame and the coping cycles that often build around ADHD."
+      />
+      <Section title="Common therapy goals">
+        <CardGrid
+          columns={2}
+          items={[
+            "Understanding how ADHD affects attention, motivation, planning and follow-through.",
+            "Reducing impulsive decisions and building pause points that work in real life.",
+            "Managing emotional intensity, rejection sensitivity and overwhelm.",
+            "Building routines without perfectionism, self-criticism or all-or-nothing rules."
+          ]}
+        />
+      </Section>
+      <Section title="A strengths-based approach" tone="soft">
+        <TextBlock>
+          <p>
+            ADHD therapy is most useful when it respects the nervous system in front of it. We work with your energy, sensory needs, memory, values and environment rather than trying to force generic advice onto a neurodivergent brain.
+          </p>
+          <p>
+            The work can sit alongside medication, coaching, assessment or other clinical care. Therapy focuses on understanding patterns, reducing distress and making change possible.
+          </p>
+        </TextBlock>
+      </Section>
+      <CTA theme="adhd" title="Ask about ADHD-informed therapy" href="/contact" label="Get in touch" />
     </main>
-  )
+  );
 }
