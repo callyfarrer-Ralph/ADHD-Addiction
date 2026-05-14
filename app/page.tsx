@@ -1,15 +1,20 @@
-import { CardGrid, CrisisDisclaimer, CTA, Hero, Section, TextBlock } from "@farrer/shared-ui";
+import { CardGrid, CrisisDisclaimer, CTA, FeatureBand, Hero, ProcessSteps, Section, StatementPanel, TextBlock } from "@farrer/shared-ui";
 
 export default function HomePage() {
   return (
     <main>
       <Hero
         theme="adhd"
-        eyebrow="Specialist online CBT · ADHD, addiction and co-occurring mental health · UK-wide"
+        eyebrow="Specialist online CBT for ADHD, addiction and co-occurring mental health"
         title="Premium specialist therapy for ADHD and addictive patterns"
-        text="A calm, highly structured and neurodiversity-affirming therapy service for adults who want to understand the link between ADHD, emotional regulation, impulsivity and addictive behaviour — and build change that lasts."
+        text="A calm, highly structured and neurodiversity-affirming therapy service for adults who want to understand the link between ADHD, emotional regulation, impulsivity and addictive behaviour, then build change that lasts."
         primary={{ href: "/contact", label: "Book a free consultation" }}
         secondary={{ href: "/treatment", label: "What to expect" }}
+        highlights={[
+          { title: "Specialist focus", text: "ADHD, addiction and compulsive behaviours treated together." },
+          { title: "Adult online therapy", text: "Secure sessions for clients across the UK." },
+          { title: "Evidence-based", text: "CBT-informed, trauma-aware and compassion-led." }
+        ]}
       />
 
       <Section
@@ -24,7 +29,24 @@ export default function HomePage() {
             The work is practical, collaborative and paced carefully. Sessions can include ADHD-informed CBT, relapse prevention, emotional regulation, values-based planning, compassion-focused work and support for the wider mental health difficulties that often sit alongside addiction.
           </p>
         </TextBlock>
+        <StatementPanel
+          theme="adhd"
+          title="Clinical promise"
+          text="You will not be reduced to symptoms, labels or willpower. Therapy looks at the whole pattern, including the nervous system, environment, risk, values and the parts of life you want back."
+        />
       </Section>
+
+      <FeatureBand
+        theme="adhd"
+        eyebrow="Why this is different"
+        title="A service designed for overlap, not neat categories"
+        text="Many people arrive having been treated for addiction without ADHD being understood, or for ADHD without enough attention to risk, craving and compulsive cycles."
+        items={[
+          { kicker: "Formulation", title: "One joined-up map", text: "We connect attention, emotion, urges, avoidance, shame and recovery goals into one shared formulation." },
+          { kicker: "Practicality", title: "Tools that fit ADHD", text: "Strategies are designed around working memory, stimulation needs, transitions and all-or-nothing patterns." },
+          { kicker: "Safety", title: "Clear risk planning", text: "Therapy includes plans for escalation, lapses, crisis signs and when extra support is needed." }
+        ]}
+      />
 
       <Section title="Specialist support, clearly held" tone="soft">
         <CardGrid
@@ -46,6 +68,14 @@ export default function HomePage() {
       </Section>
 
       <Section title="A more considered therapy experience">
+        <ProcessSteps
+          steps={[
+            { title: "Initial enquiry", text: "A brief contact to discuss availability, fit and whether the service is appropriate." },
+            { title: "Assessment", text: "A careful conversation about ADHD traits, addictive patterns, risk, history and goals." },
+            { title: "Therapy plan", text: "A focused plan with review points, skills, relapse prevention and compassionate accountability." },
+            { title: "Ongoing review", text: "Progress is reviewed so the work stays relevant, useful and properly paced." }
+          ]}
+        />
         <CardGrid
           columns={2}
           items={[
